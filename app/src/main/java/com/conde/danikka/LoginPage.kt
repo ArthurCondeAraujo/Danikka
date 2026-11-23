@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.onGloballyPositioned
+import com.conde.danikka.components.LoginPage.DanikkaLogo
 import com.conde.danikka.components.LoginPage.LoginButton
 import com.conde.danikka.components.LoginPage.NameTextField
 import com.conde.danikka.components.LoginPage.PasswordChangeText
@@ -19,6 +20,7 @@ import com.conde.danikka.components.testing.logTest
 fun LoginPage() {
     Column( horizontalAlignment = Alignment.CenterHorizontally) {
         Column(modifier = Modifier.width(IntrinsicSize.Max) .onGloballyPositioned{ coordinates -> logTest("Divider", "Width ${coordinates.size.width}") }, horizontalAlignment = Alignment.CenterHorizontally ) {
+            DanikkaLogo()
             NameTextField()
             SecureTextField()
             PasswordChangeText()
