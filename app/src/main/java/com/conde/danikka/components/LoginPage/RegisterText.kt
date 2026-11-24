@@ -5,12 +5,11 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.conde.danikka.components.testing.placeholder
 
 @Composable
-fun RegisterText() {
+fun RegisterText(onRegister: () -> Unit) {
     Row {
         Text(text = "Não tem uma conta?")
-        Text(text = " Registre-se", Modifier.clickable { placeholder() })
+        Text(text = " Registre-se", Modifier.clickable { onRegister() })
     }
 }

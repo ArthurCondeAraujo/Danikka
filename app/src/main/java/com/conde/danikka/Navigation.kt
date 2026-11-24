@@ -21,7 +21,18 @@ fun navigationSetup () {
         ) {
             composable ("login") {
                 val viewModel = it.sharedViewModel<SampleViewModel>(navController)
-                LoginPage()
+                LoginPage(
+                viewModel = viewModel,
+                onNavRegister = {
+                    navController.navigate("register")
+                },
+                onLogin = {
+                    navController.navigate("main") {
+                    popUpTo("auth") {inclusive = true}
+                    }
+                }
+                )
+
             }
             composable ("register") {
                 val viewModel = it.sharedViewModel<SampleViewModel>(navController)

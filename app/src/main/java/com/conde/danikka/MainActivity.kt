@@ -28,14 +28,6 @@ class MainActivity : ComponentActivity() {
 //    )
 //}
 
-@Preview(showBackground = true)
-@Composable
-fun LoginPagePreview() {
-    DanikkaTheme {
-        LoginPage()
-    }
-}
-
 
 //@Preview(showBackground = true)
 //@Composable

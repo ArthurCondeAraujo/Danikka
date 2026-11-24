@@ -17,18 +17,22 @@ import com.conde.danikka.components.LoginPage.SecureTextField
 import com.conde.danikka.components.testing.logTest
 
 @Composable
-fun LoginPage() {
+fun LoginPage(
+    viewModel: SampleViewModel,
+    onNavRegister: () -> Unit,
+    onLogin: () -> Unit
+) {
     Column( horizontalAlignment = Alignment.CenterHorizontally) {
         Column(modifier = Modifier.width(IntrinsicSize.Max) .onGloballyPositioned{ coordinates -> logTest("Divider", "Width ${coordinates.size.width}") }, horizontalAlignment = Alignment.CenterHorizontally ) {
             DanikkaLogo()
             NameTextField()
             SecureTextField()
             PasswordChangeText()
-            LoginButton()
+            LoginButton(onLogin)
         }
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             HorizontalDivider ()
-            RegisterText()
+            RegisterText(onNavRegister)
         }
     }
 }
