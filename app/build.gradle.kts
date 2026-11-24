@@ -36,6 +36,11 @@ android {
 }
 
 dependencies {
+    val nav_version = "2.10.2"
+    implementation("androidx.navigation:navigation-compose:${nav_version}")
+    implementation("androidx.navigation:navigation-fragment:${nav_version}")
+    implementation("androidx.navigation:navigation-ui:${nav_version}")
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:${nav_version}")
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
@@ -49,6 +54,7 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
 }
