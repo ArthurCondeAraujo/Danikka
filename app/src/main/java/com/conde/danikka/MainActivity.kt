@@ -44,3 +44,11 @@ fun LoginPagePreview() {
 //        Greeting("Android")
 //    }
 //}
+
+@Preview(showBackground = true)
+@Composable
+fun MainPagePreview() {
+    DanikkaTheme {
+        MainPage()
+    }
+}
