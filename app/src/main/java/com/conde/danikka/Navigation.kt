@@ -12,7 +12,7 @@ import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun navigationSetup () {
+fun NavigationSetup () {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "auth") {
         navigation(
@@ -22,22 +22,39 @@ fun navigationSetup () {
             composable ("login") {
                 val viewModel = it.sharedViewModel<SampleViewModel>(navController)
                 LoginPage(
-                viewModel = viewModel,
-                onNavRegister = {
-                    navController.navigate("register")
-                },
-                onLogin = {
-                    navController.navigate("main") {
-                    popUpTo("auth") {inclusive = true}
+                    viewModel = viewModel,
+                    onNavRegister = {
+                        navController.navigate("register")
+                    },
+                    onLogin = {
+                        navController.navigate("main") {
+                        popUpTo("auth") {inclusive = true}
+                        }
                     }
-                }
                 )
 
             }
             composable ("register") {
                 val viewModel = it.sharedViewModel<SampleViewModel>(navController)
+                RegisterPage(
+                    viewModel = viewModel,
+                    onRegister = {
+                        navController.navigate("main") {
+                            popUpTo("auth") {inclusive = true}
+                        }
+                    },
+                    onNavEula = {
+                        navController.navigate("eula")
+                    },
+                    onNavLogin = {
+                        navController.navigate("login")
+                    }
+                )
             }
             composable ("forgot_password") {
+                val viewModel = it.sharedViewModel<SampleViewModel>(navController)
+            }
+            composable ("eula") {
                 val viewModel = it.sharedViewModel<SampleViewModel>(navController)
             }
         }
@@ -47,6 +64,7 @@ fun navigationSetup () {
         ) {
             composable ("main_screen") {
                 val viewModel = it.sharedViewModel<SampleViewModel>(navController)
+                MainPage()
             }
         }
     }

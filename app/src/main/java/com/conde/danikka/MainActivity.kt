@@ -1,5 +1,6 @@
     package com.conde.danikka
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,7 +15,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             DanikkaTheme {
-                navigationSetup()
+                NavigationSetup()
+                ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
             }
         }
     }

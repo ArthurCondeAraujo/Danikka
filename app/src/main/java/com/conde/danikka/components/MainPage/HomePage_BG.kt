@@ -17,7 +17,7 @@ fun HomePage_BG(){
         Image(
             painter = painterResource(id = R.drawable.background_homepage),
             contentDescription = "Background HomePage",
-            contentScale = ContentScale.FillBounds,
+            contentScale = ContentScale.FillWidth,
             modifier = Modifier.matchParentSize()
 
         )

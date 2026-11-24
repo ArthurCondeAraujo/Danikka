@@ -15,7 +15,7 @@ import com.conde.danikka.R
 fun LoginPageBG(){
     Box(modifier = Modifier.fillMaxSize()){
         Image(
-            painter = painterResource(id = R.drawable.background_homepage),
+            painter = painterResource(id = R.drawable.danika_auth_bg),
             contentDescription = "Background HomePage",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier.matchParentSize()
